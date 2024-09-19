@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    
+    <bean id="jt" class="com.tap.IOC.impl.JavaTrainer">
+         <!--<property name="name" value="kshitij"></property>
+            <property name="message" value="java trainer"></property>  -->   
+            
+            <constructor-arg name="name" value="kshitij"></constructor-arg>
+            <constructor-arg name="message" value="java trainer"></constructor-arg>
+            <property name="practiceHours" ref="ph"></property>
+    
+    
+    </bean>
+    
+    
+    <bean id="st" class="com.tap.IOC.impl.SqlTrainer">
+             <!--  <property name="name" value="somanna"></property>
+            <property name="message" value="SQl trainer"></property> -->   
+            
+             <constructor-arg name="name" value="somanna"></constructor-arg>
+            <constructor-arg name="message" value="SQl trainer"></constructor-arg>
+              <property name="practiceHours" ref="ph"></property>
+    </bean>
+      
+      
+    <bean id="wt" class="com.tap.IOC.impl.WebTrainer">
+               <!--   <property name="name" value="Rohit"></property>
+              <property name="message" value="Web trainer"></property> -->  
+              
+              <constructor-arg name="name" value="Rohit"></constructor-arg>
+            <constructor-arg name="message" value="Web trainer"></constructor-arg>
+              <property name="practiceHours" ref="ph"></property>
+    
+    </bean>
+    <bean id="ph" class="com.tap.IOC.practice.PracticeHours">
+    
+    <property name="practicTime" value="3hrs"></property>
+    
+    
+    </bean>
+    
+
+</beans>
